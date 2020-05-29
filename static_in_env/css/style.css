@@ -21,3 +21,31 @@ body,
 /* Footer color for sake of consistency with Navbar */
 .page-footer {
   background-color: #929FBA; }
+
+/* 
+  Custom NavBar Background
+  https://stackoverflow.com/a/18530995/9663835
+*/
+.navbar-custom {
+  background: rgba(255,0,132,1);
+  background: -moz-linear-gradient(left, rgba(255,0,132,1) 0%, rgba(194,161,29,1) 50%, rgba(0,255,242,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,0,132,1)), color-stop(50%, rgba(194,161,29,1)), color-stop(100%, rgba(0,255,242,1)));
+  background: -webkit-linear-gradient(left, rgba(255,0,132,1) 0%, rgba(194,161,29,1) 50%, rgba(0,255,242,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,0,132,1) 0%, rgba(194,161,29,1) 50%, rgba(0,255,242,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,0,132,1) 0%, rgba(194,161,29,1) 50%, rgba(0,255,242,1) 100%);
+  background: linear-gradient(to right, rgba(255,0,132,1) 0%, rgba(194,161,29,1) 50%, rgba(0,255,242,1) 100%);
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}

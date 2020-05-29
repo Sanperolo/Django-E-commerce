@@ -344,6 +344,7 @@ class PaymentView(View):
 
 
 class HomeView(ListView):
+    # TODO: Pass Categories in order to display in Home.
     model = Item
     paginate_by = 10
     template_name = "home.html"

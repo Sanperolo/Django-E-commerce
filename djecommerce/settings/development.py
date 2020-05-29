@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
     'debug_toolbar'
@@ -37,9 +37,19 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 DATABASES = {
+    # Sqlite3
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+    # PostgreSQL
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'eco_db',
+        'USER': 'eco_user',
+        'PASSWORD': 'eco_pass',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

@@ -1,0 +1,22 @@
+{% extends home.html %}
+{% if category_is_food %}
+{% for item in item.category %}
+{{content}}
+{% endfor %}
+{% endif %}
+{% if category_is_tech %}
+{% for item in item.category %}
+{{content}}
+{% endfor %}
+{% endif %}
+{% if category_is_clothes %}
+{% for item in item.category %}
+{{content}}
+{% endfor %}
+{% endif %}
+{% if category_is_sport %}
+{% for item in item.category %}
+{{content}}
+{% endfor %}
+{% endif %}
+{% endblock %}
