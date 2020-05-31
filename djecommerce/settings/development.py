@@ -45,13 +45,16 @@ DATABASES = {
     # PostgreSQL
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'eco_db',
-        'USER': 'eco_user',
-        'PASSWORD': 'eco_pass',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
 
 STRIPE_PUBLIC_KEY = ''
 STRIPE_SECRET_KEY = ''
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

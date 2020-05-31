@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from decouple import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(
