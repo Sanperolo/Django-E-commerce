@@ -1,18 +1,34 @@
-version: '3'
+version: '2'    
+services:
+
+  # PostgreSQL
+
+  mydb:
+    image: postgres:10
+
+    ports:
+
+      - "5432:5432"
+
+    environment:
+      - POSTGRES_DB= "eco_db"
+      - POSTGRES_USER= "eco_user"
+      - POSTGRES_PASSWORD= "eco_pass"
+  web:
+    build: ./code
+      
+      dockerfile: Dockerfile
     
-  services:
-    db:
-      image: postgres
-      environment:
-        - POSTGRES_DB= "eco_db"
-        - POSTGRES_USER= "eco_user"
-        - POSTGRES_PASSWORD= "eco_pass"
-    web:
-      build: .
-      command: ./manage.py runserver 127.0.0.1:8000
-      volumes:
-        - .:/code
-      ports:
-        - "8000:8000"
-      depends_on:
-        - db
+    command: ./manage.py runserver 127.0.0.1:8000
+    
+    volumes:
+      
+      - database-data:/var/lib/postgresql/data/ 
+    
+    ports:
+      
+      - "8000:8000"
+    
+    depends_on:
+      
+      - mydb
