@@ -1,7 +1,9 @@
 from .base import *
+import dj_database_url
+from decouple import config
 
 DEBUG = config('DEBUG', cast=bool)
-ALLOWED_HOSTS = ['ip-address', 'www.your-website.com']
+ALLOWED_HOSTS = ['*']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -11,14 +13,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': '5432'
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
