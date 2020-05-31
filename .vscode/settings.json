@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "${workspaceFolder}/env/bin/python3",
+  "python.pythonPath": "/home/development5/.virtualenvs/djecommerce/bin/python",
   "editor.formatOnSave": true,
   "python.linting.pycodestyleEnabled": true,
   "python.linting.pylintPath": "pylint",
