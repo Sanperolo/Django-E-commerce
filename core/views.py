@@ -12,8 +12,6 @@ from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, Us
 
 import random
 import string
-import stripe
-stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def create_ref_code():
@@ -192,9 +190,7 @@ class CheckoutView(View):
 
                 payment_option = form.cleaned_data.get('payment_option')
 
-                if payment_option == 'S':
-                    return redirect('core:payment', payment_option='stripe')
-                elif payment_option == 'P':
+                if payment_option == 'P':
                     return redirect('core:payment', payment_option='paypal')
                 else:
                     messages.warning(

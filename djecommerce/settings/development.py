@@ -53,8 +53,5 @@ DATABASES = {
     }
 }
 
-STRIPE_PUBLIC_KEY = ''
-STRIPE_SECRET_KEY = ''
-
 # Activate Django-Heroku.
 django_heroku.settings(locals())
